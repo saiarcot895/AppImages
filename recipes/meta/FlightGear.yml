@@ -1,0 +1,14 @@
+app: FlightGear
+binpatch: true
+
+ingredients:
+  dist: trusty
+  sources: 
+    - deb http://archive.ubuntu.com/ubuntu/ trusty main universe
+  ppas:
+    - saiarcot895/flightgear
+
+script:
+  - mv usr/games/* usr/bin/ ; rm -r usr/games/
+  - rm lib/x86_64-linux-gnu/libssl*
+  - rm lib/x86_64-linux-gnu/libcrypto.so.1.0.0
